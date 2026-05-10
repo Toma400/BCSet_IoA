@@ -1,6 +1,6 @@
-![](bcs/assets/bcs.png)
-
 <center>
+
+![](bcs/assets/bcs.png)
 
 # Baedoor Creation Set
 > **The Isle of Ansur**
