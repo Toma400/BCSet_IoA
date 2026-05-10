@@ -18,6 +18,11 @@ let
   HEIGHTf = HEIGHT.float
 var
   MENU_USED = mNONE # default before app is ran
+#
+# let
+#   projButton_Open = newButton("Open the project")
+#   projButton_Add  = newButton("Add new project")
+#   projButton_Remv = newButton("Remove the project")
 
 # proc loadImage(wimg: var Image, img: pImage) =
 #     var img_bseq : seq[byte] # byte array (dynamic)
@@ -37,15 +42,16 @@ proc buttProc (sender: Button) =
 
 proc run() =
     MENU_USED = mPROJ_SELECT # initial menu
-    let butt1 = newButton("Click me!!1", buttProc) # TODO
-    let butt2 = newButton("Click me!!2", buttProc) # TODO
+    # let butt1 = newButton("Click me!!1", buttProc) # TODO
+    # let butt2 = newButton("Click me!!2", buttProc) # TODO
 
     let window = newWindow(TITLE, WIDTH, HEIGHT, hasMenubar=true)
     case MENU_USED: # window children depend on menu being in use
-      of mNONE: # should not appear here
-        window.child = butt2
-      of mPROJ_SELECT:
-        window.child = butt1
+      of mNONE:        echo "!" # should not appear here
+      of mPROJ_SELECT: echo ":)"
+    # window.child = projButton_Add
+    # window.child = projButton_Open
+    # window.child = projButton_Remv
     # echo window.child
 
     # var logo_img  = readImage("bcs/assets/bcs.png")
