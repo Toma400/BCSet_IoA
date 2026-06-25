@@ -33,7 +33,7 @@ proc initApp* (): BCSApp =
     result.version = VERSION
     result.menu    = mINIT
 
-proc switchMenu* (app: BCSApp, menu: BCSMenu) =
+proc switchMenu* (app: var BCSApp, menu: BCSMenu) =
     app.menu = menu
 
 proc getResolution* (app: BCSApp): tuple[x, y: int] =
