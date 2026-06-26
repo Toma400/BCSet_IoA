@@ -1,3 +1,3 @@
 --d:release
 --app:gui
---o:"../BCSet.exe"
+--o:"BCSet.exe"

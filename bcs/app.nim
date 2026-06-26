@@ -24,7 +24,7 @@ type
     menu    : BCSMenu
 
 proc initApp* (): BCSApp =
-    let settings = open("../settings.json")
+    let settings = open("settings.json")
     let set_dict = parseJson(settings.readAll())
     close(settings)
     result.x       = set_dict{"bcs_res_x"}.getInt(WIDTH)

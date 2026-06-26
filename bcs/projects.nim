@@ -5,6 +5,7 @@
 import std/private/oscommon
 import std/private/osdirs
 import std/strformat
+import std/strutils
 import std/sequtils
 import std/options
 import vcs
@@ -44,7 +45,8 @@ proc loadProject* (name: string): BCSProject =
 
 proc listProjects* (): seq[string] =
     # returns list of strings that can be used to retrieve project through `getProject` proc
-    return toSeq(walkDirs("bcs/projects/*"))
+    for dir in walkDirs("bcs/projects/*"):
+      add(result, dir.replace("bcs\\projects\\", ""))
 
 #-------------------------------------
 # FIELDS
